@@ -37,7 +37,6 @@ with open("informador.json", "w") as archivo:
 paginas = soup.find(class_ = "pagination")
 paginas = paginas.find_all("li")
 
-
 urls = []
 for p in paginas[2:]:
     urls.append(p.a["href"])
