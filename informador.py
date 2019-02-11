@@ -2,7 +2,7 @@ from informador2 import Informador
 
 informador = Informador()
 informador.scrapping()
-print(len(informador.lista))
+informador.to_json()
 
 
 
