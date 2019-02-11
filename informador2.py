@@ -1,14 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-
+import datetime
 
 class Informador:
     def __init__(self):
         self.lista = []
 
     def to_json(self):
-        with open("informador.json", "w") as archivo:
+        with open(datetime.datetime.now().strftime("%Y-%m-%d") + ".json", "w") as archivo:
              json.dump(self.lista, archivo, sort_keys=False, indent=4)
 
     def scrapping(self):
