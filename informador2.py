@@ -26,7 +26,7 @@ class Informador:
             soup = BeautifulSoup(r.text, "html.parser")
             items = soup.find_all(class_="items")
             casas = items[0].find_all("li")
-            tipo = soup.find_all(selected="selected")[0].text.replace(" ", "")
+            tipo = soup.find_all(selected="selected")[0].text[:5].lower()
             self.scrapping_casas(casas, tipo)
 
             paginas = soup.find(class_="pagination")
@@ -34,7 +34,6 @@ class Informador:
 
             for p in paginas[2:len(paginas) - 1]:
                 urls.append(p.a["href"])
-                print(p.a["href"])
 
         self.scrapping_paginas(urls)
 
@@ -66,6 +65,6 @@ class Informador:
             soup = BeautifulSoup(r.text, "html.parser")
             items = soup.find_all(class_="items")
             casas = items[0].find_all("li")
-            tipo = soup.find_all(selected="selected")[0].text.replace(" ", "")
+            tipo = soup.find_all(selected="selected")[0].text[:5].lower()
 
             self.scrapping_casas(casas, tipo)
