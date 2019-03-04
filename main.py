@@ -1,4 +1,4 @@
-from informador2 import Informador
+from informador import Informador
 
 informador = Informador()
 informador.scrapping()
